@@ -90,7 +90,7 @@ class EquationCalculator {
         int n = 0;
         double x0 = (intervals[interNum].first + intervals[interNum].second) / 2.0;
 
-        while (std::fabs(f(x0)) > epsilon && n < CALC_METHODS_MAX_ITERATIONS) {
+        while (fabs(f(x0)) > epsilon && n < CALC_METHODS_MAX_ITERATIONS) {
             double deriv_val = f_deriv(x0);
 
             if (fabs(deriv_val) < 1e-11) {
@@ -114,7 +114,7 @@ class EquationCalculator {
         double c = a;
         int n = 0;
 
-        while (std::fabs(f(c)) > epsilon && n < CALC_METHODS_MAX_ITERATIONS) {
+        while (fabs(f(c)) > epsilon && n < CALC_METHODS_MAX_ITERATIONS) {
             c = (a + b) / 2.0;
 
             if (f(c) * f(a) < 0) {
