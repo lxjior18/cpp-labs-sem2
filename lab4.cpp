@@ -139,8 +139,8 @@ class Phones {
         vector<Phone> _phones = phones;
 
         sort(_phones.begin(), _phones.end(), [order](const Phone& p1, const Phone& p2) {
-            auto t1 = std::tie(p1.getLastName(), p1.getFirstName(), p1.getMiddleName());
-            auto t2 = std::tie(p2.getLastName(), p2.getFirstName(), p2.getMiddleName());
+            auto t1 = tie(p1.getLastName(), p1.getFirstName(), p1.getMiddleName());
+            auto t2 = tie(p2.getLastName(), p2.getFirstName(), p2.getMiddleName());
 
             if (order == SortOrdering::ASC) {
                 return t1 < t2;
